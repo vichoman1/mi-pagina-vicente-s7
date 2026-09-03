@@ -17,6 +17,7 @@
     --hueco-fondo: #fbfcfd;
     --hueco-borde: #c3ccd6;
     --campo: #ffffff;
+    --rojo: #c62828;
   }
   @media (prefers-color-scheme: dark) {
     :root {
@@ -30,6 +31,7 @@
       --hueco-fondo: #161d26;
       --hueco-borde: #3a4756;
       --campo: #131a23;
+      --rojo: #ff7a7a;
     }
   }
 
@@ -259,6 +261,13 @@
     color: var(--tenue);
   }
 
+  footer .credito {
+    display: block;
+    margin-top: 6px;
+    font-size: 11px;
+    color: var(--rojo);
+  }
+
   @media (prefers-reduced-motion: no-preference) {
     .votar, .enviar, .pestanas button { transition: color .12s, border-color .12s, background .12s; }
   }
@@ -314,7 +323,10 @@
       </section>
     </div>
 
-    <footer>Buzón interno de Invia Accounting.</footer>
+    <footer>
+      Buzón interno de Invia Accounting.
+      <span class="credito">Esta página fue creada por Vichoman</span>
+    </footer>
   </main>
 
 <script>
