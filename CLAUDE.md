@@ -18,24 +18,34 @@ Los datos de esta página viven en dos tablas de Supabase, en el proyecto
 en el HTML: todo sale de esas tablas o de lo que la persona escriba en el
 formulario.
 
-**`registros`** — una propuesta por renglón:
+**`registros`** — una propuesta por renglón. Estas son las columnas que acabó
+teniendo, en el orden real de la tabla:
 
 | Columna | Qué guarda |
 |---|---|
 | `id` | Número del renglón; lo pone la base de datos |
-| `lugar` | Nombre del lugar propuesto |
 | `nombre` | Quién lo propone |
 | `mensaje` | Por qué lo recomienda |
 | `creado_en` | Fecha y hora; la pone la base de datos |
+| `lugar` | Nombre del lugar propuesto |
+
+`lugar` queda al final porque se agregó después: la tabla nació solo con `nombre`
+y `mensaje`. `nombre`, `mensaje` y `lugar` pueden quedar vacías en la base; quien
+obliga a llenar las tres es el formulario de la página, no la tabla.
 
 **`votos`** — un voto por renglón:
 
 | Columna | Qué guarda |
 |---|---|
 | `id` | Número del renglón |
-| `registro_id` | A qué propuesta apunta |
+| `registro_id` | A qué propuesta apunta; es el `id` de un renglón de `registros` |
 | `votante` | Identificador del navegador que votó |
 | `creado_en` | Fecha y hora |
+
+Aquí no hay columnas opcionales: las cuatro son obligatorias. `registro_id` está
+amarrado a `registros` con `on delete cascade`, así que si algún día se borrara
+una propuesta se irían con ella sus votos; hoy no puede pasar, porque nadie tiene
+permiso de borrar.
 
 Los votos se cuentan sumando renglones de `votos`, **no** con un número que sube.
 Es a propósito: nadie puede modificar renglones, así que un contador sería

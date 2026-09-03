@@ -1,31 +1,24 @@
-# Mi página
+# Buzón de ideas · Invia Accounting
 
-Una página pública con un formulario que guarda lo que la gente escribe, y una
-lista que muestra lo guardado.
+Página pública de uso interno: el área de accounting de INVIA propone lugares
+para la cena de fin de año y vota las propuestas, sin contraseña. Es un solo
+archivo, `index.html`, publicado en <https://mi-pagina-vicente-s7.netlify.app>.
 
-Construida en la **Sesión 7 del curso Claude for Business**, sin escribir código:
-todo se le pidió a Claude en español.
+**De dónde salen los datos.** Ninguna propuesta ni cifra de votos está escrita
+en el HTML: salen de las tablas `registros` y `votos` del proyecto
+`curso-ejemplo` de Supabase, leídas desde el navegador con la llave
+`sb_publishable_` que está a la vista en `index.html`. Cualquiera puede leer y
+agregar; nadie puede borrar ni modificar, así que un voto no se puede quitar.
+Las columnas de las dos tablas están en `CLAUDE.md`.
 
-## Cómo está armado
+**Qué hay en `.claude`.** Solo `agents/revisor-antes-de-publicar.md`: define al
+revisor que Claude usa cuando se le pide, que lee el cambio antes de publicarlo,
+busca llaves secretas, código de más y errores, y entrega un informe sin
+arreglar nada.
 
-| Pieza | Qué hace |
-|---|---|
-| **GitHub** | Guarda este proyecto y su historial |
-| **Netlify** | Publica lo que hay aquí como página web |
-| **Supabase** | Guarda lo que la gente escribe en el formulario |
-
-## Cómo se cambia
-
-1. Se abre una sesión de Claude sobre este repositorio.
-2. Se le pide el cambio **en una rama**, no en `main`.
-3. Netlify hace una **vista previa** con su propia liga: ahí se revisa.
-4. Cuando está bien, se fusiona la rama. Eso —y solo eso— publica.
-
-> **Fusionar cuesta.** El plan gratuito de Netlify alcanza para unas veinte
-> publicaciones al mes. Las vistas previas son gratis e ilimitadas: se itera ahí
-> y se fusiona poco.
-
-## Qué NO va en este repositorio
-
-La llave `sb_publishable_` sí puede estar aquí: está hecha para andar a la vista.
-La que empieza con `sb_secret_` o dice `service_role`, **nunca**.
+**Para continuar.** Abre una sesión de Claude sobre este repositorio y pide el
+cambio en español; lee antes `CLAUDE.md`, con las reglas de trabajo y lo que
+nunca se debe hacer. Fusionar a `main` republica la página sola, y el plan
+gratuito de Netlify da unas veinte publicaciones al mes: revisa en la vista
+previa de la rama, que es gratis, y fusiona poco. Si la página deja de mostrar
+datos, Supabase se pausó: se despierta con **Resume project**.
