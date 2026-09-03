@@ -8,16 +8,46 @@ primer minuto.
 
 ## 1. Qué es este proyecto y quién lo usa
 
-*(Lo escribes tú en la sesión: dos líneas. Qué es la página, para quién es y cada
-cuándo se usa.)*
+Es un buzón de sugerencias y votos para la cena de fin de año de mi área.
+La usan mis compañeros del área de accounting de INVIA.
 
 ## 2. De dónde sale cada cifra
 
-Los datos de esta página viven en una tabla de Supabase llamada `registros`.
-Ninguna cifra ni ningún texto que se muestre se escribe a mano en el HTML: todo
-sale de esa tabla o de lo que la persona escriba en el formulario.
+Los datos de esta página viven en dos tablas de Supabase, en el proyecto
+`curso-ejemplo`. Ninguna cifra ni ningún texto que se muestre se escribe a mano
+en el HTML: todo sale de esas tablas o de lo que la persona escriba en el
+formulario.
 
-*(En la sesión le agregas las columnas que acabes usando.)*
+**`registros`** — una propuesta por renglón:
+
+| Columna | Qué guarda |
+|---|---|
+| `id` | Número del renglón; lo pone la base de datos |
+| `lugar` | Nombre del lugar propuesto |
+| `nombre` | Quién lo propone |
+| `mensaje` | Por qué lo recomienda |
+| `creado_en` | Fecha y hora; la pone la base de datos |
+
+**`votos`** — un voto por renglón:
+
+| Columna | Qué guarda |
+|---|---|
+| `id` | Número del renglón |
+| `registro_id` | A qué propuesta apunta |
+| `votante` | Identificador del navegador que votó |
+| `creado_en` | Fecha y hora |
+
+Los votos se cuentan sumando renglones de `votos`, **no** con un número que sube.
+Es a propósito: nadie puede modificar renglones, así que un contador sería
+imposible. La consecuencia a tener presente es que **un voto no se puede quitar.**
+
+La regla `unique (registro_id, votante)` impide votar dos veces por la misma
+propuesta desde el mismo navegador. Es un voto por navegador, no por persona:
+quien borre los datos de su navegador o entre desde otro aparato puede votar de
+nuevo. Sin pedir que la gente inicie sesión, no se puede ir más lejos.
+
+**Permisos de las dos tablas: cualquiera puede leer y agregar; nadie puede
+borrar ni modificar.**
 
 ## 3. Cómo quiero que trabajes aquí
 
@@ -40,15 +70,17 @@ sale de esa tabla o de lo que la persona escriba en el formulario.
 
 ## 5. Mi regla de verificación
 
-*(La escribes tú en la sesión: con qué frase cierras lo que entregas y qué tiene
-que ser cierto para que puedas publicarlo.)*
+Cierro con "Verificado:" y una lista de lo que probé. No puedo publicar nada sin
+haber abierto la página y comprobado que hace lo que dice. Si algo no lo pude
+probar, lo digo en vez de darlo por bueno.
 
 ## 6. Cómo vuelvo a abrir esto
 
-- El proyecto vive en este repositorio de GitHub.
+- El repositorio: <https://github.com/vichoman1/mi-pagina-vicente-s7>
 - Se abre pidiéndole a Claude una sesión sobre este repo; no hace falta descargarlo.
-- La página publicada está en la liga que da Netlify.
-- La base de datos está en supabase.com, en el proyecto de esta cuenta.
+- La página publicada: <https://mi-pagina-vicente-s7.netlify.app>
+  Se republica sola cada vez que algo entra a `main`; no hay que tocar Netlify.
+- La base de datos: proyecto `curso-ejemplo` en supabase.com, en esta cuenta.
 
 > **Si la página deja de mostrar datos después de una semana sin usarla**, casi
 > siempre es que el proyecto gratuito de Supabase se pausó. Se despierta con el
