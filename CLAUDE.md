@@ -8,8 +8,8 @@ primer minuto.
 
 ## 1. Qué es este proyecto y quién lo usa
 
-*(Lo escribes tú en la sesión: dos líneas. Qué es la página, para quién es y cada
-cuándo se usa.)*
+Es un buzón de sugerencias y votos para la cena de fin de año de mi área.
+La usan mis compañeros del área de accounting de INVIA.
 
 ## 2. De dónde sale cada cifra
 
