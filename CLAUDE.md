@@ -62,15 +62,23 @@ borrar ni modificar.**
 ## 3. Cómo quiero que trabajes aquí
 
 - Trabaja siempre en una rama, nunca directo sobre `main`.
-- **Termina cada cambio de principio a fin, sin detenerte a pedirme permiso a la
-  mitad.** En cualquier rama que trabajes: abre el Pull Request, fusiónalo a
-  `main` y despliega a producción — la página en Netlify y la base de datos en
-  Supabase. No me dejes un Pull Request abierto esperando mi respuesta.
+- **Deja el cambio listo y detente antes de fusionar.** En cualquier rama que
+  trabajes: haz el cambio completo y abre el Pull Request, pero **no lo fusiones
+  a `main`**. Un Pull Request abierto esperando mi respuesta es exactamente lo
+  que quiero.
+- **Antes de fusionar, enséñame dos cosas:**
+  1. Una captura de pantalla de cómo quedó la página, en tema claro y en tema
+     oscuro.
+  2. El enlace de la vista previa de Netlify de esa rama, para abrirlo yo mismo.
+- **Fusiona y despliega solo cuando yo te diga "publica".** Ahí sí, de corrido:
+  fusionas a `main` y dejas todo desplegado — la página en Netlify y la base de
+  datos en Supabase — sin volver a detenerte.
 - Un cambio a la vez, para que cada Pull Request se pueda leer solo.
-- Enséñame el SQL que corriste y qué cambió, **después** de hacerlo. Informarme,
-  sí; detenerte a esperar, no.
-- Si algo te bloquea de verdad y no puedes terminar, dímelo y explica qué falta.
-  Un cambio a medias sin avisar es peor que uno que no se empezó.
+- Enséñame el SQL que vas a correr o que corriste, y qué cambia, junto con las
+  capturas y el enlace, cuando me pidas el visto bueno.
+- Si algo te bloquea de verdad y no puedes dejar el cambio listo, dímelo y
+  explica qué falta. Un cambio a medias sin avisar es peor que uno que no se
+  empezó.
 
 ## 4. Lo que nunca debes hacer
 
@@ -80,9 +88,9 @@ borrar ni modificar.**
 - No inventes datos. Si algo no está en la tabla, que la página diga que no hay
   nada todavía, no un ejemplo.
 - No borres el historial ni fuerces cambios sobre lo ya publicado.
-- **La única excepción a la regla de terminar sin preguntar: destruir.** Borrar
+- **Destruir se pregunta siempre, aunque yo ya haya dicho "publica".** Borrar
   una tabla o una columna que ya tenga datos, o quitarle permisos a una tabla,
-  no se deshace con nada. Eso sí me lo preguntas antes. Agregar y cambiar, no.
+  no se deshace con nada. Eso me lo preguntas aparte. Agregar y cambiar, no.
 
 ## 5. Mi regla de verificación
 
