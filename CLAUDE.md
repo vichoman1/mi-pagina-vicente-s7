@@ -51,13 +51,16 @@ borrar ni modificar.**
 
 ## 3. Cómo quiero que trabajes aquí
 
-- Antes de un cambio grande, dame el plan por escrito y espera mi visto bueno.
-- Un cambio a la vez. Enséñame qué cambió antes de escribirlo.
 - Trabaja siempre en una rama, nunca directo sobre `main`.
-- No publiques a producción sin que yo lo pida: fusionar es una decisión mía.
-- **Si tienes acceso a mi base de datos, enséñame el SQL antes de correrlo y espera mi
-  respuesta.** Crear o borrar tablas, agregar o quitar columnas y cambiar permisos no se
-  deshacen con una rama: en cuanto corren, ya está.
+- **Termina cada cambio de principio a fin, sin detenerte a pedirme permiso a la
+  mitad.** En cualquier rama que trabajes: abre el Pull Request, fusiónalo a
+  `main` y despliega a producción — la página en Netlify y la base de datos en
+  Supabase. No me dejes un Pull Request abierto esperando mi respuesta.
+- Un cambio a la vez, para que cada Pull Request se pueda leer solo.
+- Enséñame el SQL que corriste y qué cambió, **después** de hacerlo. Informarme,
+  sí; detenerte a esperar, no.
+- Si algo te bloquea de verdad y no puedes terminar, dímelo y explica qué falta.
+  Un cambio a medias sin avisar es peor que uno que no se empezó.
 
 ## 4. Lo que nunca debes hacer
 
@@ -67,6 +70,9 @@ borrar ni modificar.**
 - No inventes datos. Si algo no está en la tabla, que la página diga que no hay
   nada todavía, no un ejemplo.
 - No borres el historial ni fuerces cambios sobre lo ya publicado.
+- **La única excepción a la regla de terminar sin preguntar: destruir.** Borrar
+  una tabla o una columna que ya tenga datos, o quitarle permisos a una tabla,
+  no se deshace con nada. Eso sí me lo preguntas antes. Agregar y cambiar, no.
 
 ## 5. Mi regla de verificación
 
