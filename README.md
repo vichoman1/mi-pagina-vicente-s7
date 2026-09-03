@@ -1,31 +1,27 @@
-# Mi página
+# Buzón de ideas · Invia Accounting
 
-Una página pública con un formulario que guarda lo que la gente escribe, y una
-lista que muestra lo guardado.
+Una página interna donde el área de accounting de INVIA propone lugares para la
+cena de fin de año y vota los de los demás, sin contraseña: quien tenga la liga
+participa. Es un solo archivo, `index.html`, publicado en <https://mi-pagina-vicente-s7.netlify.app>.
 
-Construida en la **Sesión 7 del curso Claude for Business**, sin escribir código:
-todo se le pidió a Claude en español.
+## De dónde salen los datos
 
-## Cómo está armado
+Nada de lo que se ve está escrito en el HTML: las propuestas salen de la tabla
+`registros` y los votos de `votos`, en el proyecto `curso-ejemplo` de Supabase.
+La página las lee desde el navegador con la llave `sb_publishable_` que está a la
+vista en `index.html`. Cualquiera puede leer y agregar; nadie puede borrar ni
+modificar, así que un voto no se puede quitar. Las columnas están en `CLAUDE.md`.
 
-| Pieza | Qué hace |
-|---|---|
-| **GitHub** | Guarda este proyecto y su historial |
-| **Netlify** | Publica lo que hay aquí como página web |
-| **Supabase** | Guarda lo que la gente escribe en el formulario |
+## Qué hay en `.claude`
 
-## Cómo se cambia
+`.claude/agents/revisor-antes-de-publicar.md`: un revisor que Claude usa cuando se
+le pide. Lee el cambio antes de publicarlo, busca llaves secretas, código de más y
+errores, y entrega un informe. No arregla nada.
 
-1. Se abre una sesión de Claude sobre este repositorio.
-2. Se le pide el cambio **en una rama**, no en `main`.
-3. Netlify hace una **vista previa** con su propia liga: ahí se revisa.
-4. Cuando está bien, se fusiona la rama. Eso —y solo eso— publica.
+## Para continuar
 
-> **Fusionar cuesta.** El plan gratuito de Netlify alcanza para unas veinte
-> publicaciones al mes. Las vistas previas son gratis e ilimitadas: se itera ahí
-> y se fusiona poco.
-
-## Qué NO va en este repositorio
-
-La llave `sb_publishable_` sí puede estar aquí: está hecha para andar a la vista.
-La que empieza con `sb_secret_` o dice `service_role`, **nunca**.
+Abre una sesión de Claude sobre este repositorio y pide el cambio en español. Lee
+antes `CLAUDE.md`: ahí están las reglas (trabajar en rama, Pull Request, fusionar
+y desplegar) y lo que nunca se debe hacer. Cada fusión a `main` republica la
+página sola; si deja de mostrar datos, Supabase se pausó y se despierta con
+**Resume project**.
