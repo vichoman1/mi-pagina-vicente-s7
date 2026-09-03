@@ -70,8 +70,9 @@ borrar ni modificar.**
 
 ## 5. Mi regla de verificación
 
-*(La escribes tú en la sesión: con qué frase cierras lo que entregas y qué tiene
-que ser cierto para que puedas publicarlo.)*
+Cierro con "Verificado:" y una lista de lo que probé. No puedo publicar nada sin
+haber abierto la página y comprobado que hace lo que dice. Si algo no lo pude
+probar, lo digo en vez de darlo por bueno.
 
 ## 6. Cómo vuelvo a abrir esto
 
