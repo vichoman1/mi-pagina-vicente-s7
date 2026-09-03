@@ -42,6 +42,11 @@ obliga a llenar las tres es el formulario de la página, no la tabla.
 | `votante` | Identificador del navegador que votó |
 | `creado_en` | Fecha y hora |
 
+Aquí no hay columnas opcionales: las cuatro son obligatorias. `registro_id` está
+amarrado a `registros` con `on delete cascade`, así que si algún día se borrara
+una propuesta se irían con ella sus votos; hoy no puede pasar, porque nadie tiene
+permiso de borrar.
+
 Los votos se cuentan sumando renglones de `votos`, **no** con un número que sube.
 Es a propósito: nadie puede modificar renglones, así que un contador sería
 imposible. La consecuencia a tener presente es que **un voto no se puede quitar.**
